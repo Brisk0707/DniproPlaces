@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Dnipro Places-->
         <scene sceneID="uhn-tb-NwH">
             <objects>
                 <tableViewController id="ws6-Zd-1aN" customClass="MainVC" customModule="MyPlaces" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,7 +41,7 @@
                             <outlet property="delegate" destination="ws6-Zd-1aN" id="jsF-sZ-HWS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="1La-6f-Z4E"/>
+                    <navigationItem key="navigationItem" title="Dnipro Places" id="1La-6f-Z4E"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E53-lu-gvs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,6 +54,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PEG-bd-Bby">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="21"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="ws6-Zd-1aN" kind="relationship" relationship="rootViewController" id="ezk-AY-eG1"/>
