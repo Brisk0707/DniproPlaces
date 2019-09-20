@@ -10,12 +10,8 @@ import UIKit
 
 class MainVC: UITableViewController {
     
-    let restaurantNames = [
-        "Le Grill", "Репортеръ", "Мамой клянусь", "Мыши Бляхера",
-        "Varburger", "Артист", "Puri Chveni", "Хан-Чинар",
-        "Casta", "Confetti", "Roadhouse", "Double bar",
-        "Эдбрург", "MAFIA", "Lumber"
-    ]
+    
+    let restaurantNames = Place.getPlace()  //[Place(image: "Le Grill", name: "Le Grill", location: "Днепр", type: "Кафе")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,19 +27,18 @@ class MainVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         
-        cell.nameOfPlaceLabel.text = restaurantNames[indexPath.row]
+        cell.nameOfPlaceLabel.text = restaurantNames[indexPath.row].name
+        cell.locationOfPlaceLabel.text = restaurantNames[indexPath.row].location
+        cell.typeOfPlaceLabel.text = restaurantNames[indexPath.row].type
         
-        cell.imageOfPlace.image = UIImage(named: restaurantNames[indexPath.row])
+        
+        cell.imageOfPlace.image = UIImage(named: restaurantNames[indexPath.row].image)
         cell.imageOfPlace?.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
         cell.imageOfPlace?.clipsToBounds = true
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
-    }
-    
-
-    
-
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 85
+//    }
 }
