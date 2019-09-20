@@ -18,22 +18,69 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="CnP-GO-P48" style="IBUITableViewCellStyleDefault" id="pOB-4I-F9Z">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="85" id="pOB-4I-F9Z" customClass="CustomTableViewCell" customModule="MyPlaces" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pOB-4I-F9Z" id="15p-bK-BIW">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="84.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CnP-GO-P48">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lH1-n2-hqR">
+                                            <rect key="frame" x="20" y="10" width="65" height="65"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="65" id="01c-w5-cJU"/>
+                                                <constraint firstAttribute="width" constant="65" id="vTw-fE-dV6"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fn-mN-mwO">
+                                            <rect key="frame" x="112" y="9" width="286" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="NDX-yp-bPL"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeH-SV-L28">
+                                            <rect key="frame" x="112" y="32" width="298" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="6EC-4b-RLc"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATU-X3-ETW">
+                                            <rect key="frame" x="112" y="53" width="282" height="15.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15.5" id="g5f-LC-hbM"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lH1-n2-hqR" firstAttribute="centerY" secondItem="15p-bK-BIW" secondAttribute="centerY" id="BzL-RF-xuv"/>
+                                        <constraint firstItem="NeH-SV-L28" firstAttribute="leading" secondItem="lH1-n2-hqR" secondAttribute="trailing" constant="27" id="Fii-PP-BJd"/>
+                                        <constraint firstItem="ATU-X3-ETW" firstAttribute="leading" secondItem="lH1-n2-hqR" secondAttribute="trailing" constant="27" id="GPt-s7-vwy"/>
+                                        <constraint firstItem="4fn-mN-mwO" firstAttribute="leading" secondItem="lH1-n2-hqR" secondAttribute="trailing" constant="27" id="PVd-xI-twA"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ATU-X3-ETW" secondAttribute="bottom" constant="5.5" id="Qhl-nP-ixp"/>
+                                        <constraint firstAttribute="trailing" secondItem="4fn-mN-mwO" secondAttribute="trailing" constant="16" id="ZIv-vq-pbm"/>
+                                        <constraint firstItem="4fn-mN-mwO" firstAttribute="top" secondItem="15p-bK-BIW" secondAttribute="top" constant="9" id="dLd-Vd-H3l"/>
+                                        <constraint firstItem="ATU-X3-ETW" firstAttribute="top" secondItem="NeH-SV-L28" secondAttribute="bottom" id="g3c-AV-Frx"/>
+                                        <constraint firstItem="ATU-X3-ETW" firstAttribute="trailing" secondItem="15p-bK-BIW" secondAttribute="trailingMargin" id="j6R-Pp-Off"/>
+                                        <constraint firstItem="lH1-n2-hqR" firstAttribute="leading" secondItem="15p-bK-BIW" secondAttribute="leading" constant="20" id="ldU-Cs-XL3"/>
+                                        <constraint firstItem="NeH-SV-L28" firstAttribute="trailing" secondItem="15p-bK-BIW" secondAttribute="trailingMargin" constant="16" id="ucR-nH-4wb"/>
+                                        <constraint firstItem="NeH-SV-L28" firstAttribute="top" secondItem="4fn-mN-mwO" secondAttribute="bottom" constant="2" id="vlg-M6-Yaw"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageOfPlace" destination="lH1-n2-hqR" id="nqF-CD-6ez"/>
+                                    <outlet property="locationOfPlaceLabel" destination="NeH-SV-L28" id="1o9-Yc-kfA"/>
+                                    <outlet property="nameOfPlaceLabel" destination="4fn-mN-mwO" id="iHP-6X-KhB"/>
+                                    <outlet property="typeOfPlaceLabel" destination="ATU-X3-ETW" id="5HF-8n-Zh5"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -45,7 +92,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E53-lu-gvs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="793" y="-429"/>
+            <point key="canvasLocation" x="792.75362318840587" y="-429.24107142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w40-ih-7Vw">
