@@ -37,8 +37,5 @@ class MainVC: UITableViewController {
         cell.imageOfPlace?.clipsToBounds = true
         return cell
     }
-    
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 85
-//    }
+    @IBAction func CloseVC(_ segue : UIStoryboardSegue) {}
 }

@@ -12,6 +12,7 @@
 		DA0C459D232FCA0E00B7DFC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0C459C232FCA0E00B7DFC6 /* Assets.xcassets */; };
 		DA0C45A0232FCA0E00B7DFC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0C459E232FCA0E00B7DFC6 /* LaunchScreen.storyboard */; };
 		DA0C45A8232FCF1700B7DFC6 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0C45A7232FCF1700B7DFC6 /* MainVC.swift */; };
+		DA539837233BB0080008B1C6 /* NewPlaceTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA539836233BB0080008B1C6 /* NewPlaceTableVC.swift */; };
 		DA9C2F822334F5D300E2FD84 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C2F812334F5D300E2FD84 /* CustomTableViewCell.swift */; };
 		DA9C2F842334FF1800E2FD84 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C2F832334FF1800E2FD84 /* PlaceModel.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,7 @@
 		DA0C459F232FCA0E00B7DFC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA0C45A1232FCA0E00B7DFC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA0C45A7232FCF1700B7DFC6 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		DA539836233BB0080008B1C6 /* NewPlaceTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceTableVC.swift; sourceTree = "<group>"; };
 		DA9C2F812334F5D300E2FD84 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		DA9C2F832334FF1800E2FD84 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +63,7 @@
 				DA0C4595232FCA0D00B7DFC6 /* AppDelegate.swift */,
 				DA9C2F832334FF1800E2FD84 /* PlaceModel.swift */,
 				DA9C2F812334F5D300E2FD84 /* CustomTableViewCell.swift */,
+				DA539836233BB0080008B1C6 /* NewPlaceTableVC.swift */,
 				DA0C45A7232FCF1700B7DFC6 /* MainVC.swift */,
 				DA0C4599232FCA0D00B7DFC6 /* Main.storyboard */,
 				DA0C459C232FCA0E00B7DFC6 /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 				DA9C2F822334F5D300E2FD84 /* CustomTableViewCell.swift in Sources */,
 				DA9C2F842334FF1800E2FD84 /* PlaceModel.swift in Sources */,
 				DA0C4596232FCA0D00B7DFC6 /* AppDelegate.swift in Sources */,
+				DA539837233BB0080008B1C6 /* NewPlaceTableVC.swift in Sources */,
 				DA0C45A8232FCF1700B7DFC6 /* MainVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
