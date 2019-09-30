@@ -19,6 +19,10 @@ class NewPlaceTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cameraIcon = #imageLiteral(resourceName: "camera")
+        let photoIcon = #imageLiteral(resourceName: "photo")
+
         if indexPath.row == 0 {
             let imageMenu = UIAlertController(title: nil,
                                               message: nil,
@@ -29,9 +33,18 @@ class NewPlaceTableVC: UITableViewController {
                 self.chooseImagePicker(source: .camera)
             }
             
+            camera.setValue(cameraIcon, forKey: "image")
+            camera.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
+            
+
+            
+            
             let photoFromLibrary = UIAlertAction(title: "Photo Library", style: .default) {_ in
                 self.chooseImagePicker(source: .photoLibrary)
             }
+            
+            photoFromLibrary.setValue(photoIcon, forKey: "image")
+            photoFromLibrary.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
             
             imageMenu.addAction(camera)
             imageMenu.addAction(photoFromLibrary)
