@@ -32,7 +32,7 @@ class MainVC: UITableViewController {
         cell.typeOfPlaceLabel.text = restaurantNames[indexPath.row].type
         
         
-        cell.imageOfPlace.image = UIImage(named: restaurantNames[indexPath.row].image)
+        cell.imageOfPlace.image = UIImage(named: restaurantNames[indexPath.row].restarauntImage!)
         cell.imageOfPlace?.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
         cell.imageOfPlace?.clipsToBounds = true
         return cell

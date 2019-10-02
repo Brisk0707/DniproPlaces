@@ -242,6 +242,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageOfPlace" destination="Dan-K9-Gqq" id="gWu-Cg-sue"/>
+                        <outlet property="locationField" destination="zv5-ZH-gl5" id="jRq-Se-YOw"/>
+                        <outlet property="nameField" destination="g4p-18-Ib1" id="IOx-bm-hAt"/>
+                        <outlet property="saveButton" destination="1dr-OV-yDB" id="aMd-3B-yjc"/>
+                        <outlet property="typeField" destination="9sL-06-Pcy" id="zkw-O9-fn9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9j-kD-gwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
