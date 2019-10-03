@@ -233,12 +233,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="G5v-j7-hR0">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="5go-m1-3Ao">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="5go-m1-3Ao"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="1dr-OV-yDB">
                             <connections>
-                                <segue destination="dIF-zI-4n0" kind="unwind" unwindAction="CloseVC:" id="WoV-s7-TIZ"/>
+                                <segue destination="dIF-zI-4n0" kind="unwind" unwindAction="unwindSegue:" id="nw2-m4-bYX"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="1dr-OV-yDB"/>
                     </navigationItem>
                     <connections>
                         <outlet property="imageOfPlace" destination="Dan-K9-Gqq" id="gWu-Cg-sue"/>

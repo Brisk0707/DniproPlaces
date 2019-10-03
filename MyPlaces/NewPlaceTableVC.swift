@@ -16,6 +16,9 @@ class NewPlaceTableVC: UITableViewController {
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var typeField: UITextField!
     
+    var newPlace: Place?
+    var imageWasChanged = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,6 +72,24 @@ class NewPlaceTableVC: UITableViewController {
             view.endEditing(true)
         }
     }
+
+    func saveNewPlace() {
+        
+        var image: UIImage
+        
+        if imageWasChanged {
+            image = imageOfPlace.image!
+        } else {
+            image = #imageLiteral(resourceName: "imagePlaceholder")
+        }
+        
+        newPlace = Place(restarauntImage: nil,
+                         name: nameField.text!,
+                         location: locationField.text,
+                         type: typeField.text,
+                         image: image)
+    }
+    
 }
 
 extension NewPlaceTableVC: UITextFieldDelegate {
@@ -107,6 +128,7 @@ extension NewPlaceTableVC: UIImagePickerControllerDelegate, UINavigationControll
         imageOfPlace.image = info[.editedImage] as? UIImage
         imageOfPlace.contentMode = .scaleAspectFill
         imageOfPlace.clipsToBounds = true
+        imageWasChanged = true
         dismiss(animated: true)
     }
 }
