@@ -16,10 +16,16 @@ class NewPlaceTableVC: UITableViewController {
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var typeField: UITextField!
     
-    var newPlace: Place?
+    var newPlace = Place()
     var imageWasChanged = false
     
     override func viewDidLoad() {
+        
+        
+        DispatchQueue.main.async {
+            self.newPlace.getPlace()
+        }
+        
         super.viewDidLoad()
         
         saveButton.isEnabled = false
@@ -73,22 +79,22 @@ class NewPlaceTableVC: UITableViewController {
         }
     }
 
-    func saveNewPlace() {
-        
-        var image: UIImage
-        
-        if imageWasChanged {
-            image = imageOfPlace.image!
-        } else {
-            image = #imageLiteral(resourceName: "imagePlaceholder")
-        }
-        
-        newPlace = Place(restarauntImage: nil,
-                         name: nameField.text!,
-                         location: locationField.text,
-                         type: typeField.text,
-                         image: image)
-    }
+//    func saveNewPlace() {
+//        
+//        var image: UIImage
+//        
+//        if imageWasChanged {
+//            image = imageOfPlace.image!
+//        } else {
+//            image = #imageLiteral(resourceName: "imagePlaceholder")
+//        }
+//        
+//        newPlace = Place(restarauntImage: nil,
+//                         name: nameField.text!,
+//                         location: locationField.text,
+//                         type: typeField.text,
+//                         image: image)
+//    }
     
 }
 
