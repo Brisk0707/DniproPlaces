@@ -7,54 +7,53 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MainVC: UITableViewController {
     
     
-//    var restaurantNames = Place.getPlace()  //[Place(image: "Le Grill", name: "Le Grill", location: "Днепр", type: "Кафе")]
+    var restaurantNames: Results<Place>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        restaurantNames = realm.objects(Place.self)
 
     }
 
 
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return restaurantNames.count
-//    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return restaurantNames.isEmpty ? 0 : restaurantNames.count
+    }
 
     
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-//
-//        let place = restaurantNames[indexPath.row]
-//
-//        cell.nameOfPlaceLabel.text = place.name
-//        cell.locationOfPlaceLabel.text = place.location
-//        cell.typeOfPlaceLabel.text = place.type
-//
-//        if place.image == nil {
-//        cell.imageOfPlace.image = UIImage(named: place.restarauntImage!)
-//
-//        } else {
-//            cell.imageOfPlace.image = place.image
-//        }
-//
-//
-//
-//
-//        cell.imageOfPlace?.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
-//        cell.imageOfPlace?.clipsToBounds = true
-//        return cell
-//    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+
+        let place = restaurantNames[indexPath.row]
+
+        cell.nameOfPlaceLabel.text = place.name
+        cell.locationOfPlaceLabel.text = place.location
+        cell.typeOfPlaceLabel.text = place.type
+        cell.imageOfPlace.image = UIImage(data: place.imageData!)
+        
+        
+
+
+
+
+
+
+        cell.imageOfPlace?.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
+        cell.imageOfPlace?.clipsToBounds = true
+        return cell
+    }
     
     @IBAction func unwindSegue(_ unwindSegue : UIStoryboardSegue) {
         
         guard let newPlaceVC = unwindSegue.source as? NewPlaceTableVC else { return }
-//        
-//        newPlaceVC.saveNewPlace()
-//        restaurantNames.append(newPlaceVC.newPlace!)
-//        tableView.reloadData()
+        newPlaceVC.saveNewPlace()
+        tableView.reloadData()
         
     }
     

@@ -16,15 +16,9 @@ class NewPlaceTableVC: UITableViewController {
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var typeField: UITextField!
     
-    var newPlace = Place()
     var imageWasChanged = false
     
     override func viewDidLoad() {
-        
-        
-        DispatchQueue.main.async {
-            self.newPlace.getPlace()
-        }
         
         super.viewDidLoad()
         
@@ -34,10 +28,7 @@ class NewPlaceTableVC: UITableViewController {
                             action:  #selector(textFieldDidChange),
                             for: .editingChanged)
         
-        
-        
         tableView.tableFooterView = UIView() //hide line under tableView
-        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -79,22 +70,26 @@ class NewPlaceTableVC: UITableViewController {
         }
     }
 
-//    func saveNewPlace() {
-//        
-//        var image: UIImage
-//        
-//        if imageWasChanged {
-//            image = imageOfPlace.image!
-//        } else {
-//            image = #imageLiteral(resourceName: "imagePlaceholder")
-//        }
-//        
-//        newPlace = Place(restarauntImage: nil,
-//                         name: nameField.text!,
-//                         location: locationField.text,
-//                         type: typeField.text,
-//                         image: image)
-//    }
+    func saveNewPlace() { //saving to DB
+                
+        var image: UIImage
+        
+        if imageWasChanged { //setting a default image
+            image = imageOfPlace.image!
+        } else {
+            image = #imageLiteral(resourceName: "imagePlaceholder")
+        }
+        
+        let imageData = image.pngData() // convert to Data
+        
+        let newPlace = Place(name: nameField.text!,
+                             location: locationField.text!,
+                             type: typeField.text!,
+                             imageData: imageData)
+        
+        StorageManager.saveObject(newPlace)
+    
+    }
     
 }
 
