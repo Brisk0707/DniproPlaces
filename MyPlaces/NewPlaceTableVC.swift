@@ -16,6 +16,7 @@ class NewPlaceTableVC: UITableViewController {
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var typeField: UITextField!
     
+    
     var imageWasChanged = false
     
     override func viewDidLoad() {
@@ -68,6 +69,10 @@ class NewPlaceTableVC: UITableViewController {
         } else {
             view.endEditing(true)
         }
+    }
+    
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        dismiss(animated: true)
     }
 
     func saveNewPlace() { //saving to DB

@@ -17,13 +17,22 @@ class MainVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        restaurantNames = realm.objects(Place.self)
+        restaurantNames = realm.objects(Place.self) //filling of array from db
 
     }
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return restaurantNames.isEmpty ? 0 : restaurantNames.count
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .default, title: "Delete") { (_, _) in
+            
+            StorageManager.deleteObject(self.restaurantNames[indexPath.row])
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        return [delete]
     }
 
     
@@ -36,13 +45,6 @@ class MainVC: UITableViewController {
         cell.locationOfPlaceLabel.text = place.location
         cell.typeOfPlaceLabel.text = place.type
         cell.imageOfPlace.image = UIImage(data: place.imageData!)
-        
-        
-
-
-
-
-
 
         cell.imageOfPlace?.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
         cell.imageOfPlace?.clipsToBounds = true

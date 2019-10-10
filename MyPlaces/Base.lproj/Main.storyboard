@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JFc-SC-a9q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JFc-SC-a9q">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -233,7 +233,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="G5v-j7-hR0">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="5go-m1-3Ao"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="5go-m1-3Ao">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="QeR-aC-vZS" id="IhT-Px-fwl"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="1dr-OV-yDB">
                             <connections>
                                 <segue destination="dIF-zI-4n0" kind="unwind" unwindAction="unwindSegue:" id="nw2-m4-bYX"/>
