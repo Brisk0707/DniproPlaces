@@ -11,7 +11,6 @@ import RealmSwift
 
 class MainVC: UITableViewController {
     
-    
     var restaurantNames: Results<Place>!
 
     override func viewDidLoad() {
@@ -54,9 +53,19 @@ class MainVC: UITableViewController {
     @IBAction func unwindSegue(_ unwindSegue : UIStoryboardSegue) {
         
         guard let newPlaceVC = unwindSegue.source as? NewPlaceTableVC else { return }
-        newPlaceVC.saveNewPlace()
+        newPlaceVC.()
         tableView.reloadData()
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "edit" {
+            guard let indexPath = tableView.indexPathForSelectedRow else {return} //getting current number of row
+            
+            let place = restaurantNames[indexPath.row] //getting current record from array
+            let newPlaceVC = segue.destination as! NewPlaceTableVC //for data transfering
+            newPlaceVC.currentPlace = place //data transfer
+        }
     }
     
   

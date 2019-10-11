@@ -16,7 +16,8 @@ class NewPlaceTableVC: UITableViewController {
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var typeField: UITextField!
     
-    
+    var currentPlace: Place?
+
     var imageWasChanged = false
     
     override func viewDidLoad() {
@@ -30,6 +31,8 @@ class NewPlaceTableVC: UITableViewController {
                             for: .editingChanged)
         
         tableView.tableFooterView = UIView() //hide line under tableView
+        
+        setupEditScreen()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -74,9 +77,32 @@ class NewPlaceTableVC: UITableViewController {
     @IBAction func cancelButtonPressed(_ sender: Any) {
         dismiss(animated: true)
     }
-
-    func saveNewPlace() { //saving to DB
-                
+    
+    private func setupEditScreen() {
+        
+        if currentPlace != nil { //when user taped on row
+            
+            imageWasChanged = true
+            
+            guard let data = currentPlace?.imageData, let image = UIImage(data: data) else { return }
+            
+            imageOfPlace.image = image
+            imageOfPlace.contentMode = .scaleAspectFill
+            nameField.text = currentPlace?.name
+            locationField.text = currentPlace?.location
+            typeField.text = currentPlace?.type
+            
+            navigationItem.leftBarButtonItem = nil
+            navigationItem.title = currentPlace?.name
+            
+            saveButton.isEnabled = true
+            
+        }
+        
+    }
+    
+    func savePlace() { //saving or editing to DB
+        
         var image: UIImage
         
         if imageWasChanged { //setting a default image
@@ -92,10 +118,18 @@ class NewPlaceTableVC: UITableViewController {
                              type: typeField.text!,
                              imageData: imageData)
         
-        StorageManager.saveObject(newPlace)
-    
+        if currentPlace != nil {
+            try! realm.write {
+                currentPlace?.name = newPlace.name
+                currentPlace?.location = newPlace.location
+                currentPlace?.type = newPlace.type
+                currentPlace?.imageData = newPlace.imageData
+                
+            }
+        } else {
+            StorageManager.saveNewPlace(newPlace)
+        }
     }
-    
 }
 
 extension NewPlaceTableVC: UITextFieldDelegate {
