@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class MainVC: UITableViewController {
+class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var restaurantNames: Results<Place>!
 
@@ -20,12 +20,15 @@ class MainVC: UITableViewController {
 
     }
 
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var reversedSortingButton: UIBarButtonItem!
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return restaurantNames.isEmpty ? 0 : restaurantNames.count
     }
     
-    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .default, title: "Delete") { (_, _) in
             
             StorageManager.deleteObject(self.restaurantNames[indexPath.row])
@@ -35,7 +38,7 @@ class MainVC: UITableViewController {
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
         let place = restaurantNames[indexPath.row]
@@ -53,7 +56,7 @@ class MainVC: UITableViewController {
     @IBAction func unwindSegue(_ unwindSegue : UIStoryboardSegue) {
         
         guard let newPlaceVC = unwindSegue.source as? NewPlaceTableVC else { return }
-        newPlaceVC.()
+        newPlaceVC.savePlace()
         tableView.reloadData()
         
     }
@@ -68,7 +71,19 @@ class MainVC: UITableViewController {
         }
     }
     
-  
+    @IBAction func sortSelection(_ sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            restaurantNames = restaurantNames.sorted(byKeyPath: "date")
+        } else {
+            restaurantNames = restaurantNames.sorted(byKeyPath: "name")
+        }
+        
+        tableView.reloadData()
+    }
+    
+    @IBAction func reversedSorting(_ sender: UIBarButtonItem) {
+    }
 }
 
 
