@@ -11,10 +11,26 @@ import RealmSwift
 
 class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var restaurantNames: Results<Place>!
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var restaurantNames: Results<Place>!
+    private var filteredPlaces: Results<Place>!
+    private var ascendingSorting = true
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Setup search controller
+        searchController.searchResultsUpdater = self //display results on current view
+        searchController.obscuresBackgroundDuringPresentation = false  //work with results as an main vc
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true //setting down search bar, when display changed
+        
         
         restaurantNames = realm.objects(Place.self) //filling of array from db
 
@@ -72,18 +88,42 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     @IBAction func sortSelection(_ sender: UISegmentedControl) {
-        
-        if sender.selectedSegmentIndex == 0 {
-            restaurantNames = restaurantNames.sorted(byKeyPath: "date")
-        } else {
-            restaurantNames = restaurantNames.sorted(byKeyPath: "name")
-        }
-        
-        tableView.reloadData()
+        sorting()
     }
     
     @IBAction func reversedSorting(_ sender: UIBarButtonItem) {
+        ascendingSorting.toggle()
+        
+        if ascendingSorting {
+            reversedSortingButton.image = #imageLiteral(resourceName: "AZ")
+        } else {
+            reversedSortingButton.image = #imageLiteral(resourceName: "ZA")
+        }
+        
+        sorting()
+    }
+    
+    private func sorting() {
+        
+        if segmentedControl.selectedSegmentIndex == 0{
+            restaurantNames = restaurantNames.sorted(byKeyPath: "date", ascending: ascendingSorting)
+        } else {
+            restaurantNames = restaurantNames.sorted(byKeyPath: "name", ascending: ascendingSorting)
+        }
+        
+        tableView.reloadData()
+
     }
 }
 
+extension MainVC: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        //
+    }
+    
+    private func filterContentForSearchText(_ searchText: String){
+        
+        //filteredPlaces = restaurantNames.filter(<#T##predicate: NSPredicate##NSPredicate#>)
+    }
+}
 
