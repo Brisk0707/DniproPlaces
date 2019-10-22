@@ -260,6 +260,28 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="140" id="hI3-9G-tur">
+                                        <rect key="frame" x="0.0" y="518" width="414" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hI3-9G-tur" id="G4r-8i-z7D">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wgf-Eu-0GB" customClass="RaitingControl" customModule="MyPlaces" customModuleProvider="target">
+                                                    <rect key="frame" x="87" y="48" width="240" height="44"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starCount">
+                                                            <integer key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wgf-Eu-0GB" firstAttribute="centerX" secondItem="G4r-8i-z7D" secondAttribute="centerX" id="4wZ-Uz-JD0"/>
+                                                <constraint firstItem="wgf-Eu-0GB" firstAttribute="centerY" secondItem="G4r-8i-z7D" secondAttribute="centerY" id="u6I-Yu-Ct9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -291,7 +313,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9j-kD-gwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="dIF-zI-4n0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2403" y="-436"/>
+            <point key="canvasLocation" x="2403" y="-433"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w40-ih-7Vw">
