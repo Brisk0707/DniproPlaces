@@ -20,6 +20,10 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         return text.isEmpty
     }
     
+    private var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +45,11 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var reversedSortingButton: UIBarButtonItem!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering {
+            return filteredPlaces.count
+        } else {
         return restaurantNames.isEmpty ? 0 : restaurantNames.count
+        }
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
@@ -57,7 +65,14 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
-        let place = restaurantNames[indexPath.row]
+        var place = Place()
+        
+        if isFiltering {
+            place = filteredPlaces[indexPath.row]
+        } else {
+            place = restaurantNames[indexPath.row]
+        }
+        
 
         cell.nameOfPlaceLabel.text = place.name
         cell.locationOfPlaceLabel.text = place.location
@@ -80,8 +95,12 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "edit" {
             guard let indexPath = tableView.indexPathForSelectedRow else {return} //getting current number of row
-            
-            let place = restaurantNames[indexPath.row] //getting current record from array
+            let place : Place
+            if isFiltering {   //getting current record from array
+                place = filteredPlaces[indexPath.row]
+            } else {
+                place = restaurantNames[indexPath.row]
+            }
             let newPlaceVC = segue.destination as! NewPlaceTableVC //for data transfering
             newPlaceVC.currentPlace = place //data transfer
         }
@@ -118,12 +137,13 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
 extension MainVC: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        //
+        filterContentForSearchText(searchController.searchBar.text!)
     }
     
     private func filterContentForSearchText(_ searchText: String){
         
-        //filteredPlaces = restaurantNames.filter(<#T##predicate: NSPredicate##NSPredicate#>)
+        filteredPlaces = restaurantNames.filter("name CONTAINS[c] %@ OR location CONTAINS[c] %@", searchText, searchText)
+        tableView.reloadData()
     }
 }
 

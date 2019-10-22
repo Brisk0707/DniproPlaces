@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sk7-80-w4F">
-                                <rect key="frame" x="0.0" y="88" width="414" height="39"/>
+                                <rect key="frame" x="1" y="89" width="412" height="38"/>
                                 <segments>
                                     <segment title="Date"/>
                                     <segment title="Name"/>
@@ -95,13 +95,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="sk7-80-w4F" firstAttribute="top" secondItem="pN0-xG-s55" secondAttribute="top" id="2dT-Rc-HGj"/>
-                            <constraint firstItem="sk7-80-w4F" firstAttribute="leading" secondItem="pN0-xG-s55" secondAttribute="leading" id="Ewx-0R-Urx"/>
-                            <constraint firstItem="pN0-xG-s55" firstAttribute="trailing" secondItem="sk7-80-w4F" secondAttribute="trailing" id="Fj6-D2-UgN"/>
-                            <constraint firstItem="sk7-80-w4F" firstAttribute="top" secondItem="pN0-xG-s55" secondAttribute="top" id="foD-GP-eHk"/>
-                            <constraint firstItem="vYa-q3-71d" firstAttribute="top" secondItem="sk7-80-w4F" secondAttribute="bottom" constant="1" id="gLf-4b-hqq"/>
-                            <constraint firstItem="sk7-80-w4F" firstAttribute="leading" secondItem="pN0-xG-s55" secondAttribute="leading" id="vip-gT-NQk"/>
-                            <constraint firstItem="pN0-xG-s55" firstAttribute="trailing" secondItem="sk7-80-w4F" secondAttribute="trailing" id="vkC-c2-TJb"/>
+                            <constraint firstItem="vYa-q3-71d" firstAttribute="top" secondItem="sk7-80-w4F" secondAttribute="bottom" constant="1" id="4QM-g3-Zq8"/>
+                            <constraint firstItem="sk7-80-w4F" firstAttribute="leading" secondItem="pN0-xG-s55" secondAttribute="leading" constant="1" id="l1w-eR-Fei"/>
+                            <constraint firstItem="pN0-xG-s55" firstAttribute="trailing" secondItem="sk7-80-w4F" secondAttribute="trailing" constant="1" id="pV6-dV-Ykh"/>
+                            <constraint firstItem="sk7-80-w4F" firstAttribute="top" secondItem="pN0-xG-s55" secondAttribute="top" constant="1" id="ps8-8F-BaH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pN0-xG-s55"/>
                     </view>
