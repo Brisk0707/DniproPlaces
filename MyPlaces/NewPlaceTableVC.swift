@@ -30,7 +30,10 @@ class NewPlaceTableVC: UITableViewController {
                             action:  #selector(textFieldDidChange),
                             for: .editingChanged)
         
-        tableView.tableFooterView = UIView() //hide line under tableView
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0,
+                                                         y: 0,
+                                                         width: tableView.frame.size.width,
+                                                         height: 1)) //hide line under tableView
         
         setupEditScreen()
     }
@@ -52,10 +55,7 @@ class NewPlaceTableVC: UITableViewController {
             
             camera.setValue(cameraIcon, forKey: "image")
             camera.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
-            
-
-            
-            
+        
             let photoFromLibrary = UIAlertAction(title: "Photo Library", style: .default) {_ in
                 self.chooseImagePicker(source: .photoLibrary)
             }

@@ -95,7 +95,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="vYa-q3-71d" firstAttribute="top" secondItem="sk7-80-w4F" secondAttribute="bottom" constant="1" id="4QM-g3-Zq8"/>
+                            <constraint firstItem="vYa-q3-71d" firstAttribute="top" secondItem="sk7-80-w4F" secondAttribute="bottom" constant="1" id="0Ri-pD-IgC"/>
                             <constraint firstItem="sk7-80-w4F" firstAttribute="leading" secondItem="pN0-xG-s55" secondAttribute="leading" constant="1" id="l1w-eR-Fei"/>
                             <constraint firstItem="pN0-xG-s55" firstAttribute="trailing" secondItem="sk7-80-w4F" secondAttribute="trailing" constant="1" id="pV6-dV-Ykh"/>
                             <constraint firstItem="sk7-80-w4F" firstAttribute="top" secondItem="pN0-xG-s55" secondAttribute="top" constant="1" id="ps8-8F-BaH"/>
@@ -267,11 +267,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wgf-Eu-0GB" customClass="RaitingControl" customModule="MyPlaces" customModuleProvider="target">
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wgf-Eu-0GB" customClass="RaitingControl" customModule="MyPlaces" customModuleProvider="target">
                                                     <rect key="frame" x="87" y="48" width="240" height="44"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="starCount">
-                                                            <integer key="value" value="4"/>
+                                                            <integer key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </stackView>
