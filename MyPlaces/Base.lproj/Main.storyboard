@@ -269,11 +269,6 @@
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wgf-Eu-0GB" customClass="RaitingControl" customModule="MyPlaces" customModuleProvider="target">
                                                     <rect key="frame" x="87" y="48" width="240" height="44"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="starCount">
-                                                            <integer key="value" value="5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
