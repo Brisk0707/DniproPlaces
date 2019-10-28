@@ -31,57 +31,71 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="110" id="3U4-9A-Wgr" customClass="CustomTableViewCell" customModule="MyPlaces" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="110"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="120" id="3U4-9A-Wgr" customClass="CustomTableViewCell" customModule="MyPlaces" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3U4-9A-Wgr" id="NnJ-oD-mLM">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uuf-et-J18">
-                                                    <rect key="frame" x="20" y="22.666666666666671" width="65" height="65"/>
+                                                    <rect key="frame" x="20" y="27.666666666666671" width="65" height="65"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="65" id="SUv-4l-3Mz"/>
                                                         <constraint firstAttribute="width" constant="65" id="Zp7-te-IYC"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3qx-11-ekY">
-                                                    <rect key="frame" x="101" y="19" width="277" height="72"/>
+                                                    <rect key="frame" x="101" y="19" width="120" height="82.666666666666671"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvY-yC-BOx">
-                                                            <rect key="frame" x="0.0" y="0.0" width="44.333333333333336" height="19.333333333333332"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="44.333333333333336" height="22.333333333333332"/>
                                                             <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeF-dl-UuY">
-                                                            <rect key="frame" x="0.0" y="29.333333333333336" width="57.666666666666664" height="17.666666666666664"/>
+                                                            <rect key="frame" x="0.0" y="32.333333333333336" width="57.666666666666664" height="20"/>
                                                             <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKH-2f-VwV">
-                                                            <rect key="frame" x="0.0" y="57" width="27.333333333333332" height="15"/>
+                                                            <rect key="frame" x="0.0" y="62.333333333333336" width="27.333333333333332" height="20.333333333333336"/>
                                                             <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMI-1X-3fy">
+                                                    <rect key="frame" x="271" y="45" width="115" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="3s1-Zc-U30"/>
+                                                        <constraint firstAttribute="width" constant="115" id="Eh6-AQ-UE3"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="3qx-11-ekY" firstAttribute="top" secondItem="NnJ-oD-mLM" secondAttribute="topMargin" constant="8" id="0QP-D8-xEU"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="3qx-11-ekY" secondAttribute="bottom" constant="8" id="7H5-LN-zZf"/>
-                                                <constraint firstItem="3qx-11-ekY" firstAttribute="leading" secondItem="Uuf-et-J18" secondAttribute="trailing" constant="16" id="DE1-kQ-rzq"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="3qx-11-ekY" secondAttribute="trailing" constant="16" id="Ri4-Bs-iTM"/>
+                                                <constraint firstItem="AMI-1X-3fy" firstAttribute="top" secondItem="NnJ-oD-mLM" secondAttribute="topMargin" constant="34" id="1Lf-xA-M1d"/>
+                                                <constraint firstItem="AMI-1X-3fy" firstAttribute="leading" secondItem="3qx-11-ekY" secondAttribute="trailing" constant="50" id="Elb-2E-LjH"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="AMI-1X-3fy" secondAttribute="trailing" constant="8" id="PbY-wh-Gr8"/>
                                                 <constraint firstItem="Uuf-et-J18" firstAttribute="centerY" secondItem="NnJ-oD-mLM" secondAttribute="centerY" id="c2d-8o-hO3"/>
+                                                <constraint firstItem="3qx-11-ekY" firstAttribute="top" secondItem="NnJ-oD-mLM" secondAttribute="topMargin" constant="8" id="jec-UA-SqV"/>
                                                 <constraint firstItem="Uuf-et-J18" firstAttribute="leading" secondItem="NnJ-oD-mLM" secondAttribute="leading" constant="20" id="lXw-Oh-TMu"/>
+                                                <constraint firstItem="3qx-11-ekY" firstAttribute="leading" secondItem="Uuf-et-J18" secondAttribute="trailing" constant="16" id="pIy-bU-uVf"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3qx-11-ekY" secondAttribute="bottom" constant="7.3300000000000001" id="rXQ-If-PdW"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="AMI-1X-3fy" secondAttribute="bottom" constant="33" id="yAE-Uy-yxI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imageOfPlace" destination="Uuf-et-J18" id="fc7-RK-M2t"/>
                                             <outlet property="locationOfPlaceLabel" destination="aeF-dl-UuY" id="CwY-cF-R07"/>
                                             <outlet property="nameOfPlaceLabel" destination="FvY-yC-BOx" id="Wqw-Tg-oVH"/>
+                                            <outlet property="ratingLabel" destination="AMI-1X-3fy" id="jia-6g-S5G"/>
                                             <outlet property="typeOfPlaceLabel" destination="xKH-2f-VwV" id="sly-lS-A01"/>
                                             <segue destination="QeR-aC-vZS" kind="show" identifier="edit" id="TMK-oh-2Gb"/>
                                         </connections>
@@ -301,6 +315,7 @@
                         <outlet property="imageOfPlace" destination="Dan-K9-Gqq" id="gWu-Cg-sue"/>
                         <outlet property="locationField" destination="zv5-ZH-gl5" id="jRq-Se-YOw"/>
                         <outlet property="nameField" destination="g4p-18-Ib1" id="IOx-bm-hAt"/>
+                        <outlet property="ratingControl" destination="wgf-Eu-0GB" id="ZJS-JO-C56"/>
                         <outlet property="saveButton" destination="1dr-OV-yDB" id="aMd-3B-yjc"/>
                         <outlet property="typeField" destination="9sL-06-Pcy" id="zkw-O9-fn9"/>
                     </connections>

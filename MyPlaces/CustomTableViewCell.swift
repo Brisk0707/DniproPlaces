@@ -14,5 +14,6 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var nameOfPlaceLabel: UILabel!
     @IBOutlet weak var locationOfPlaceLabel: UILabel!
     @IBOutlet weak var typeOfPlaceLabel: UILabel!
-
+    @IBOutlet weak var ratingLabel: UILabel!
+    
 }

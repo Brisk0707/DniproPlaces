@@ -70,6 +70,8 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
         var place = Place()
+        var star = ""
+        cell.ratingLabel.text = ""
         
         if isFiltering {
             place = filteredPlaces[indexPath.row]
@@ -77,11 +79,22 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             place = restaurantNames[indexPath.row]
         }
         
-
         cell.nameOfPlaceLabel.text = place.name
         cell.locationOfPlaceLabel.text = place.location
         cell.typeOfPlaceLabel.text = place.type
         cell.imageOfPlace.image = UIImage(data: place.imageData!)
+        
+        //cell.ratingLabel.text = String(Int(place.rating))
+        
+        
+        if place.rating == 0 {
+            cell.ratingLabel.text = "Нет отзывов"
+        } else {
+            for _ in 1...Int(place.rating) {
+                cell.ratingLabel.text = cell.ratingLabel.text! + "⭐️"
+            }
+        }
+        
 
         cell.imageOfPlace?.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
         cell.imageOfPlace?.clipsToBounds = true

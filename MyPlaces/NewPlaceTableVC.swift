@@ -15,8 +15,9 @@ class NewPlaceTableVC: UITableViewController {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var typeField: UITextField!
+    @IBOutlet weak var ratingControl: RaitingControl!
     
-    var currentPlace: Place?
+    var currentPlace: Place!
 
     var imageWasChanged = false
     
@@ -91,6 +92,7 @@ class NewPlaceTableVC: UITableViewController {
             nameField.text = currentPlace?.name
             locationField.text = currentPlace?.location
             typeField.text = currentPlace?.type
+            ratingControl.rating = Int(currentPlace.rating)
             
             navigationItem.leftBarButtonItem = nil
             navigationItem.title = currentPlace?.name
@@ -116,7 +118,8 @@ class NewPlaceTableVC: UITableViewController {
         let newPlace = Place(name: nameField.text!,
                              location: locationField.text!,
                              type: typeField.text!,
-                             imageData: imageData)
+                             imageData: imageData,
+                             rating: Double(ratingControl.rating))
         
         if currentPlace != nil {
             try! realm.write {
@@ -124,6 +127,7 @@ class NewPlaceTableVC: UITableViewController {
                 currentPlace?.location = newPlace.location
                 currentPlace?.type = newPlace.type
                 currentPlace?.imageData = newPlace.imageData
+                currentPlace?.rating = newPlace.rating
                 
             }
         } else {
