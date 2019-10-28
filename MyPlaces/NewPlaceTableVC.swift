@@ -103,6 +103,15 @@ class NewPlaceTableVC: UITableViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "showMap" {
+            return
+        }
+        
+        let mapVC = segue.description as! MapViewController
+        mapVC.place = currentPlace
+    }
+    
     func savePlace() { //saving or editing to DB
         
         var image: UIImage

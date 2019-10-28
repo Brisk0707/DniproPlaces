@@ -18,6 +18,7 @@
 		DA9C2F842334FF1800E2FD84 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C2F832334FF1800E2FD84 /* PlaceModel.swift */; };
 		DAAEB00E235F3E050067D065 /* RaitingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAEB00D235F3E050067D065 /* RaitingControl.swift */; };
 		DACE0A0B2348AF3400288C5F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE0A0A2348AF3400288C5F /* DataManager.swift */; };
+		DACFF3872367346B00291A81 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFF3862367346B00291A81 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		DA9C2F832334FF1800E2FD84 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		DAAEB00D235F3E050067D065 /* RaitingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaitingControl.swift; sourceTree = "<group>"; };
 		DACE0A0A2348AF3400288C5F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		DACFF3862367346B00291A81 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E59618F3018DA899936771C1 /* Pods_MyPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 				DAAEB00D235F3E050067D065 /* RaitingControl.swift */,
 				DA539836233BB0080008B1C6 /* NewPlaceTableVC.swift */,
 				DACE0A0A2348AF3400288C5F /* DataManager.swift */,
+				DACFF3862367346B00291A81 /* MapViewController.swift */,
 				DA0C45A7232FCF1700B7DFC6 /* MainVC.swift */,
 				DA0C4599232FCA0D00B7DFC6 /* Main.storyboard */,
 				DA0C459C232FCA0E00B7DFC6 /* Assets.xcassets */,
@@ -225,6 +228,7 @@
 				DA539837233BB0080008B1C6 /* NewPlaceTableVC.swift in Sources */,
 				DAAEB00E235F3E050067D065 /* RaitingControl.swift in Sources */,
 				DA0C45A8232FCF1700B7DFC6 /* MainVC.swift in Sources */,
+				DACFF3872367346B00291A81 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
