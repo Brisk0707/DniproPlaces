@@ -28,6 +28,7 @@ class Place: Object {
         self.init()
         self.name = name
         self.location = location
+        self.type = type
         self.imageData = imageData
         self.rating = rating
 

@@ -331,7 +331,7 @@
                         <outlet property="nameField" destination="g4p-18-Ib1" id="IOx-bm-hAt"/>
                         <outlet property="ratingControl" destination="wgf-Eu-0GB" id="ZJS-JO-C56"/>
                         <outlet property="saveButton" destination="1dr-OV-yDB" id="aMd-3B-yjc"/>
-                        <outlet property="typeField" destination="9sL-06-Pcy" id="zkw-O9-fn9"/>
+                        <outlet property="typeTextField" destination="9sL-06-Pcy" id="znR-2H-Baz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9j-kD-gwp" userLabel="First Responder" sceneMemberID="firstResponder"/>

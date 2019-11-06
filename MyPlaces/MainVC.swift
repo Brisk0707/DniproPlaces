@@ -70,7 +70,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
         var place = Place()
-        var star = ""
+        //var star = ""
         cell.ratingLabel.text = ""
         
         if isFiltering {

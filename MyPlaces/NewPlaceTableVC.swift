@@ -14,8 +14,8 @@ class NewPlaceTableVC: UITableViewController {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var locationField: UITextField!
-    @IBOutlet weak var typeField: UITextField!
     @IBOutlet weak var ratingControl: RaitingControl!
+    @IBOutlet weak var typeTextField: UITextField!
     
     var currentPlace: Place!
 
@@ -91,7 +91,7 @@ class NewPlaceTableVC: UITableViewController {
             imageOfPlace.contentMode = .scaleAspectFill
             nameField.text = currentPlace?.name
             locationField.text = currentPlace?.location
-            typeField.text = currentPlace?.type
+            typeTextField.text = currentPlace?.type
             ratingControl.rating = Int(currentPlace.rating)
             
             navigationItem.leftBarButtonItem = nil
@@ -104,29 +104,25 @@ class NewPlaceTableVC: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier != "showMap" {
-            return
-        }
+        if segue.identifier != "showMap" { return }
         
-        let mapVC = segue.description as! MapViewController
-        mapVC.place = currentPlace
+        let mapVC = segue.destination as! MapViewController
+        mapVC.place.name = nameField.text!
+        mapVC.place.type = typeTextField.text!
+        mapVC.place.location = locationField.text!
+        mapVC.place.imageData = imageOfPlace.image?.pngData()
+    
     }
     
     func savePlace() { //saving or editing to DB
         
-        var image: UIImage
+        let image = imageWasChanged ? imageOfPlace.image : #imageLiteral(resourceName: "imagePlaceholder")
         
-        if imageWasChanged { //setting a default image
-            image = imageOfPlace.image!
-        } else {
-            image = #imageLiteral(resourceName: "imagePlaceholder")
-        }
-        
-        let imageData = image.pngData() // convert to Data
+        let imageData = image?.pngData() // convert to Data
         
         let newPlace = Place(name: nameField.text!,
                              location: locationField.text!,
-                             type: typeField.text!,
+                             type: typeTextField.text!,
                              imageData: imageData,
                              rating: Double(ratingControl.rating))
         
