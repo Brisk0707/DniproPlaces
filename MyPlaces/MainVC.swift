@@ -141,7 +141,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private func sorting() {
         
-        if segmentedControl.selectedSegmentIndex == 0{
+        if segmentedControl.selectedSegmentIndex == 0 {
             restaurantNames = restaurantNames.sorted(byKeyPath: "date", ascending: ascendingSorting)
         } else {
             restaurantNames = restaurantNames.sorted(byKeyPath: "name", ascending: ascendingSorting)

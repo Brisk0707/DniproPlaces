@@ -104,13 +104,23 @@ class NewPlaceTableVC: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier != "showMap" { return }
         
-        let mapVC = segue.destination as! MapViewController
-        mapVC.place.name = nameField.text!
-        mapVC.place.type = typeTextField.text!
-        mapVC.place.location = locationField.text!
-        mapVC.place.imageData = imageOfPlace.image?.pngData()
+        guard
+            let identifier = segue.identifier,
+            let mapVC = segue.destination as? MapViewController
+            else {return}
+        
+        mapVC.incomeSegueIdentifier = identifier
+        mapVC.mapViewControllerDelegate = self
+        
+        
+        if identifier == "showPlace" {
+            mapVC.place.name = nameField.text!
+            mapVC.place.type = typeTextField.text!
+            mapVC.place.location = locationField.text!
+            mapVC.place.imageData = imageOfPlace.image?.pngData()
+        }
+        
     
     }
     
@@ -179,5 +189,11 @@ extension NewPlaceTableVC: UIImagePickerControllerDelegate, UINavigationControll
         imageOfPlace.clipsToBounds = true
         imageWasChanged = true
         dismiss(animated: true)
+    }
+}
+
+extension NewPlaceTableVC: MapViewContorllerDelegate {
+    func getAdress(_ address: String?) {
+        locationField.text = address
     }
 }
